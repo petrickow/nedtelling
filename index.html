@@ -1,40 +1,47 @@
 <!doctype html>
 
 <html lang="nb">
-<head>
-  <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
 
-  <title>Bellevue</title>
-  <meta name="description" content="Nedtelling">
-  <meta name="author" content="Cato">
+    <title>Bellevue</title>
+    <meta name="description" content="Nedtelling">
+    <meta name="author" content="Cato">
 
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
+    <link rel="stylesheet" href="css/styles.css?v=1.0">
 
-</head>
+  </head>
 
-<body>
-  <h1></h1>
+  <body>
+    <div>
+      <h1></h1>
+    </div>
 
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-
-  <script>
-    var dots = '';
-    const update = () => {
-      const remaining = moment("2020-02-15 22:00").fromNow()
-      switch(dots.length) {
-        case 0: dots = '.'; break;
-        case 1: dots = '..'; break;
-        case 2: dots = '...'; break;
-        case 3: dots = ''; break;
+    <style>
+      h1 {
+        font-size: 7em;
       }
+      div {
+        margin-left: 5%;
+      }
+    </style>
 
-      document.getElementsByTagName('h1')[0].innerHTML = remaining + dots;
-    }
-    
-    update();
-    setInterval(update, 1 * 1000);
-  </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script>
+      var dots = '';
+      const update = () => {
+        const remaining = moment("2020-02-15 22:00").fromNow()
+        switch(dots.length) {
+          case 0: dots = '.'; break;
+          case 1: dots = '..'; break;
+          case 2: dots = '...'; break;
+          case 3: dots = ''; break;
+        }
 
-</body>
+        document.getElementsByTagName('h1')[0].innerHTML = remaining + dots;
+      }
+      update();
+      setInterval(update, 1 * 1000);
+    </script>
+  </body>
 </html>
